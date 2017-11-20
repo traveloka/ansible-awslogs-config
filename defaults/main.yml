@@ -1,0 +1,6 @@
+---
+awslogs_agent_conf_dir: "/etc/awslogs/conf.d"
+awslogs_app_log_directory: "/var/log"
+awslogs_default_datetime_format: "%Y/%m/%d %H:%M:%S.%f"
+awslogs_default_timezone: "UTC"
+awslogs_app_log_settings: []

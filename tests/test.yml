@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: True
+  roles:
+    - name: ansible-awslogs-config
+      awslogs_app_name: "traveloka"
+      awslogs_app_log_settings:
+        - file: "/var/log/nginx/access.log"
+          datetime_format: "%Y/%m/%d %H:%M:%S.%f"
+          group_name: "nginx.access.log"
+          time_zone: "UTC"
