@@ -1,4 +1,4 @@
-# awslogs
+# awslogs-config
 
 ![Build Status](https://travis-ci.org/traveloka/ansible-awslogs-config.svg?branch=master)
 
@@ -9,8 +9,17 @@ Setup awslogs config
 awslogs is installed
 
 ## Role Variables
+- awslogs_agent_conf_dir: awslogs config directory.
 
-_TODO_
+  the default is /etc/awslogs/conf.d
+- awslogs_app_name: what to name the generated config
+
+  e.g. "traveloka" -> the generated config will be saved in "{{ awslogs_agent_conf_dir }}/traveloka.conf"
+
+- awslogs_app_log_settings: array of [CloudWatch logs settings](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html)
+  - group_name: the target group name in AWS CWL
+  - stream_name: the target stream name in AWS CWL. default to hostname
+  - see the official documentation for other available options
 
 ## Dependencies
 
