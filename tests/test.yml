@@ -4,6 +4,7 @@
   roles:
     - name: ansible-awslogs-config
       awslogs_app_name: "traveloka"
+      awslogs_agent_conf_dir: "{{ lookup('env','TRAVIS_BUILD_DIR') }}"
       awslogs_app_log_settings:
         - file: "/var/log/nginx/access.log"
           datetime_format: "%Y/%m/%d %H:%M:%S.%f"
