@@ -2,6 +2,7 @@
 - name: "copy {{ awslogs_app_name }} configuration"
   become: yes
   become_method: sudo
+  notify: restart awslogs
   template:
     dest: "{{ awslogs_agent_conf_dir }}/{{ awslogs_app_name }}.conf"
     src: awslogs_config.conf.j2
